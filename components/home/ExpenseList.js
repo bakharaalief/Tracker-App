@@ -7,5 +7,6 @@ export default function ExpenseList({expenses}){
         renderItem={({item}) => <ExpenseItem expense={item}/>}
         keyExtractor={item => item.id}
         overScrollMode="never"
+        scrollEnabled={false}
     />
 }
