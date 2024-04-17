@@ -1,11 +1,15 @@
 import { FontAwesome5 } from "@expo/vector-icons"
 import { StyleSheet, Text, View } from "react-native"
+import { listCategory } from "../../data/dummy-data";
 
 export default function ExpenseItem({expense}){
+    const categoryId = expense.category;
+    const category = listCategory.find((category) => category.id === categoryId)
+
     return <View style={styles.itemContainer}>
         {/* icon */}
-        <View style={[styles.iconBorder, {backgroundColor: expense.category.borderColor}]}>
-            <FontAwesome5 name={expense.category.icon} size={20} color={expense.category.color}/>
+        <View style={[styles.iconBorder, {backgroundColor: category.borderColor}]}>
+            <FontAwesome5 name={category.icon} size={20} color={category.color}/>
         </View>
 
         {/* info */}
